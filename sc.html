@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WrendliHub - Расписание</title>
+    <!-- Glide.js CSS is no longer needed -->
+    <link rel="stylesheet" href="sc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="schedule-page">
+        <div class="container">
+            <h1 class="section-title anim-child">Расписание занятий</h1>
+
+            <div class="view-switcher">
+                <div class="switch-container">
+                    <input type="radio" name="view" id="view-today" checked>
+                    <label for="view-today">Ближайшие</label>
+                    <input type="radio" name="view" id="view-full">
+                    <label for="view-full">Вся неделя</label>
+                    <input type="radio" name="view" id="view-carousel">
+                    <label for="view-carousel">По дням</label>
+                    <div class="switch-selection"></div>
+                </div>
+            </div>
+
+            <div id="today-tomorrow-view" class="view-container active">
+                <!-- Populated by JS -->
+            </div>
+
+            <div id="full-week-view" class="view-container">
+                 <!-- Populated by JS -->
+            </div>
+
+            <div id="carousel-view" class="view-container">
+                <div class="custom-select-wrapper">
+                    <div class="custom-select" id="custom-day-select">
+                        <div class="custom-select__trigger">
+                            <span id="selected-day-text">Выберите день</span>
+                            <div class="arrow-down"></div>
+                        </div>
+                        <div class="custom-options">
+                            <!-- Options populated by JS -->
+                        </div>
+                    </div>
+                </div>
+                <div id="selected-day-card-container">
+                    <!-- Card for the selected day will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Glide.js script is no longer needed -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script type="module" src="sc.js"></script>
+</body>
+</html>
