@@ -126,12 +126,22 @@ body {
     fill: var(--color-primary-end);
 }
 
+.subject,
+.teacher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    overflow-wrap: break-word; /* Prevent long words from overflowing */
+    word-wrap: break-word; /* Legacy support */
+}
+
 .subject {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.4;
     color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .split-lesson {
@@ -246,7 +256,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 16px;
+    /* Removed fixed padding to rely on the container's padding */
 }
 
 #selected-day-card-container .schedule-card,
@@ -454,4 +464,25 @@ body {
     background-color: var(--color-primary-start); /* Changed from --primary to --color-primary-start */
     color: var(--bg-main); /* Changed from --bg-primary to --bg-main */
     font-weight: 600;
+}
+
+/* 10. RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px; /* Reduced padding on smaller screens */
+    }
+
+    #today-tomorrow-view, #full-week-view {
+        grid-template-columns: 1fr; /* Force single column layout on mobile */
+        gap: 24px; /* Optionally reduce the gap */
+    }
+
+    .switch-container {
+        padding: 4px;
+    }
+    
+    .switch-container label {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
